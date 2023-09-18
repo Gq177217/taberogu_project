@@ -18,7 +18,7 @@ use App\Http\Controllers\TopController;
 //viewsのwelcom.blade.phpを表示　welcom pageを表示
 Route::get('/',[TopController::class, 'index' ]);
 
-Route::get('stores/store',[StoreController::class, 'index' ]);
+Route::get('/stores',[StoreController::class, 'index' ])->name('stores') ;
 
 Auth::routes();
 
