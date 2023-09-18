@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Store;
 use Illuminate\Http\Request;
 
@@ -12,35 +13,11 @@ class StoreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-                //Eloquent
-                $values = Store::all();
-
-                //件数取得
-                $count = Store::count();
-                
-                //指定した番号で検索
-        
-                $first = Store::findOrFail(1);
-        
-                $whereChar = store::where('price', '=', '1000')->get();
-                
-                dd($values, $count, $first, $whereChar);
-                //$$$$$$$$データベースへの接続確認の仕方　　DB::connection()->enableQueryLog();
-                //ここでデータベースへの問い合わせ
-                //$queries = DB::getQueryLog();
-        
-                //dd($queries);
-                //クエリビルダ
-                //$queryBuilder = DB::table('stores')->where('name', '=', 'すだく')
-                //->select('id', 'name')
-                //->get();
-        
-                //dd($values, $count, $first, $queryBuilder);
-                
-                //viewに渡す
-                return view('stores.store', compact('values'));
+        $categoryId = $request->input('category');
+        $stores = Store::where('category_id', '=', $categoryId)->get();
+        return view('stores.store', compact('stores'));
     }
 
     /**
