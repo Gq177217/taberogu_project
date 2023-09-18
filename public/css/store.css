@@ -64,3 +64,17 @@
     background-size: cover;
 
 }
+
+/* おいしいお店を探すのサイズ指定 */
+.front-page-comment {
+    font-weight: bold;
+    color: #ffffff;
+  } 
+
+  .h1 {
+    font-size: 26px;
+    font-weight: bold;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.13px;
+  }
