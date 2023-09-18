@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StoreController;
+use App\Http\Controllers\TopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +16,7 @@ use App\Http\Controllers\StoreController;
 */
 
 //viewsのwelcom.blade.phpを表示　welcom pageを表示
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[TopController::class, 'index' ]);
 
 Route::get('stores/store',[StoreController::class, 'index' ]);
 
