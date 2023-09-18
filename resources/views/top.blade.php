@@ -398,6 +398,7 @@
         <div class="d-flex justify-content-center align-items-center top-wrapper">
             <div class="d-flex justify-content-center">
                 <div class="search-area px-5 py-4">
+                    <img src="{{ asset('img/NYC.jpeg') }}" alt="">
                     <h1 class="mt-2">おいしいお店を探す</h1>
                     <div class="d-flex flex-wrap flex-sm-nowrap">
                         <form action="{{ route('stores') }}">
@@ -415,12 +416,12 @@
         </div>
     </div>
 
-    <style>
+    <!--<style>
         body {
             background-image: url(../public/img/NYC.jpeg);
             background-repeat: no-repeat
         }
-    </style>
+    </style>-->
 
 </body>
 
