@@ -12,3 +12,20 @@
         <input type="submit" value="search">
     </form>
 @endsection
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+    <style>
+        body {
+            background-image: url(../public/img/NYC.jpeg);
+        }
+    </style>
+</body>
+
+</html>

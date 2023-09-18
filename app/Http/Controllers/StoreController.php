@@ -20,6 +20,12 @@ class StoreController extends Controller
         return view('stores.store', compact('stores'));
     }
 
+    public function detail(Request $request)
+    {
+
+        return view('stores.detail', compact('XXXX'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
