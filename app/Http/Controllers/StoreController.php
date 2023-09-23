@@ -15,15 +15,29 @@ class StoreController extends Controller
      */
     public function index(Request $request)
     {
-        $categoryId = $request->input('category');
-        $stores = Store::where('category_id', '=', $categoryId)->get();
+        $categoryId = $request->input('category_id');
+        $keyword = $request->input('keyword');
+
+        $query = Store::query();
+
+        if (!is_null($categoryId)) {
+            $query->where("category_id", "=", $categoryId);
+        }
+
+        if (!is_null($keyword)) {
+            $query->where("name", "like", "%" . $keyword . "%");
+        }
+
+        $stores = $query->get();
         return view('stores.store', compact('stores'));
     }
 
-    public function detail(Request $request)
+    public function detail($id)
     {
 
-        return view('stores.detail', compact('XXXX'));
+        //storeDBの全データ取得
+        $store = Store::find($id);
+        return view('stores.detail', compact('store'));
     }
 
     /**

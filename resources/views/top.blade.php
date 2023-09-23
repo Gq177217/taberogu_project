@@ -398,22 +398,44 @@
         <div class="d-flex justify-content-center align-items-center top-wrapper">
             <div class="d-flex justify-content-center">
                 <div class="search-area px-5 py-4">
-                    <img src="{{ asset('img/NYC.jpeg') }}" alt="">
-                    <h1 class="mt-2">おいしいお店を探す</h1>
-                    <div class="d-flex flex-wrap flex-sm-nowrap">
-                        <form action="{{ route('stores') }}">
-                            <input name="keyword" type="text"/ placeholder="店名">
-                            <select name="category" id="">
-                                @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->major_category_name }}</option>
-                                @endforeach
-                            </select>
-                            <input type="submit" value="検索">
-                        </form>
-                    @endsection
-                </div>
+                    <div class="search">
+                        <h1 class="mt-2">おいしいお店を探す</h1>
+                        <div class="d-flex flex-wrap flex-sm-nowrap">
+                            <form action="{{ route('stores') }}">
+                                <div class="me-2 mb-2">
+                                    <input name="keyword" type="text"/ placeholder="店名">
+                                    <select class="form-control form-select" name="category" id="">
+                                        <option selected>Category</option>
+                                        @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}">{{ $category->major_category_name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+
+                                    <input type="submit" value="検索">
+                            </form>
+                        </div>
+                    </div>
+                @endsection
+                <style>
+                    body {
+                        background-image: url(img/NYC.jpeg);
+                        /* 画像を常に上下左右の中央に配置させる */
+                        background-position: center center;
+                        /* 画像を繰り返し表示しない */
+                        background-repeat: no-repeat;
+                        /* ページなどのコンテンツの高さが画像の高さより大きい時動に固定する */
+                        background-attachment: fixed;
+                        /* 画面、ブラウザのサイズに基づいて、背景画像を調整 */
+                        background-size: cover;
+                        /* 背景画像が表示されるまでの間に表示される(待機中に表示される)背景のカラー */
+                        background-color: #000000;
+
+                    }
+                </style>
             </div>
         </div>
+    </div>
     </div>
 
     <!--<style>
