@@ -1,4 +1,4 @@
-@font-face {
+/*@font-face {
     font-family: YuGo;
     src: local(YuGo-Medium),
       url(/path/to/YuGo-Medium.woff2) format("woff2"),
@@ -91,7 +91,7 @@
     color: #191919;
   }
 
-.store-login-input {
+/*.store-login-input {
     border-radius: 2px;
     border: solid 1px #b2b2b2;
     background-color: #ffffff;
@@ -145,14 +145,14 @@
     line-height: normal;
     letter-spacing: normal;
     color: red;
-}
+}*/
 
-.search {
-    height: 200px;
-    width: 600px;
+/*.search {
+    height: 100px;
+    width: 300px;
     align-items: bottom;
     text-align: center;
     margin: 0 auto;
-    background-color:rgb(239, 236, 236); 
-    box-sizing: border-box;
+    background-color:rgb(248, 1, 1); 
+    
 }
